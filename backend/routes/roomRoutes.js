@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-router.get("/", protect, adminOnly, getAllRooms);
+router.get("/",  getAllRooms);
 router.get("/hotel/:hotelId", getRoomsByHotel);
 router.get("/:id", getRoomById);
 router.post("/", protect, adminOnly, upload.array("images", 5), createRoom);
