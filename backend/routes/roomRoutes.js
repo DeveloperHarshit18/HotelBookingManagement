@@ -28,3 +28,5 @@ router.put("/:id", protect, adminOnly, upload.array("images", 5), updateRoom);
 router.delete("/:id", protect, adminOnly, deleteRoom);
 
 module.exports = router;
+
+// mongodb+srv://harshits0147:<db_password>@cluster0.thsfpgk.mongodb.net/

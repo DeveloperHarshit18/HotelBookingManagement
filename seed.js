@@ -37,15 +37,7 @@ const seed = async () => {
     console.log("DB Name:", mongoose.connection.name);
     console.log("Ready State:", mongoose.connection.readyState);
 
-
 const db = mongoose.connection.db;
-
-await db.collection("users").deleteMany({});
-await db.collection("hotels").deleteMany({});
-await db.collection("rooms").deleteMany({});
-await db.collection("bookings").deleteMany({});
-
-console.log("🗑️  Cleared existing data");
 
 const salt = await bcrypt.genSalt(10);
 const hashedAdminPassword = await bcrypt.hash("admin123", salt);
